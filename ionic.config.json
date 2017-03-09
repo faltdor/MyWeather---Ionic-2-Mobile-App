@@ -1,0 +1,16 @@
+{
+  "name": "myweather",
+  "app_id": "",
+  "v2": true,
+  "typescript": true,
+  "proxies": [
+	    {
+	      "path": "/api",
+	      "proxyUrl": "http://api.wunderground.com/api"
+	    },
+	    {
+	      "path": "/search",
+	      "proxyUrl": "http://autocomplete.wunderground.com"
+	    }
+	]
+}

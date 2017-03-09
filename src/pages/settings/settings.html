@@ -1,0 +1,44 @@
+<!--
+  Generated template for the Settings page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="weather">
+	<ion-grid>
+		<ion-row>
+			<ion-col with-100>
+				<ion-list>
+					<ion-item>
+						<ion-label fixed> Default City
+						</ion-label>
+						<ion-input (keyup)="getQuery()" [(ngModel)]="searchStr" type="text" clearInput>
+
+						</ion-input>
+					</ion-item>
+					 <h2> <strong> Current:</strong>
+						 {{defaultCity}}
+					 </h2>
+					
+					<button (click)="saveChanges()" ion-button block>
+						Save Changes
+					</button>
+				</ion-list>
+				<ion-list>
+					<ion-item *ngFor="let city of results">
+						<span (click)="setDefaultCity(city)"> {{city.name}}</span>
+					</ion-item>
+				</ion-list>
+			</ion-col>
+		</ion-row>
+	</ion-grid>	
+</ion-content>
